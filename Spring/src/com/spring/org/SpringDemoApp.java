@@ -18,8 +18,6 @@ public class SpringDemoApp {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring_classPath.xml");
 		Triangle triangle2 = (Triangle) context.getBean("triangle");
 		triangle2.draw();
-		triangle2.getType();
-		triangle2.getHeight();
 	}
 
 }
