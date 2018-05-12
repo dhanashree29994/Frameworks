@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-<bean id="triangle" class="com.spring.org.Triangle">
-	<constructor-arg index="0" value="Equilateral"></constructor-arg>
-	<constructor-arg index="1" value="56"></constructor-arg>
-</bean>
+	<bean id="triangle" class="com.spring.org.Triangle">
+		<property name="a" ref="zeroPoint">
+		</property>
+		<property name="b">
+			<bean id="point2" class="com.spring.org.Point">
+				<property name="x" value="-20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+
+		<property name="c">
+			<bean id="point3" class="com.spring.org.Point">
+				<property name="x" value="20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+
+	</bean>
+	<bean id="zeroPoint" class="com.spring.org.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+
 </beans>
