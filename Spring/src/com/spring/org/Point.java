@@ -17,6 +17,13 @@ public class Point {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
+	public void myInit()
+	{
+		System.out.println("In my initialization method point");
+	}
+	public void cleanUp()
+	{
+		System.out.println("Destroy methodpoints");
+	}
 
 }

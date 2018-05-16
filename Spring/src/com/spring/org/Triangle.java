@@ -128,8 +128,11 @@ public class Triangle
 	}
 	public void myInit()
 	{
-		
 		System.out.println("In my initialization method");
+	}
+	public void cleanUp()
+	{
+		System.out.println("Destroy method");
 	}
 	
 }
