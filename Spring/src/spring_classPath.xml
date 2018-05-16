@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-	<bean id="triangle" class="com.spring.org.Triangle">
-		<property name="a" ref="zeroPoint">
-		</property>
-		<property name="b">
-			<bean id="point2" class="com.spring.org.Point">
-				<property name="x" value="-20" />
-				<property name="y" value="0" />
-			</bean>
-		</property>
-
-		<property name="c">
-			<bean id="point3" class="com.spring.org.Point">
-				<property name="x" value="20" />
-				<property name="y" value="0" />
-			</bean>
-		</property>
-
+	<bean id="triangle" class="com.spring.org.Triangle" >
+	<property name="pointA" ref="pointA"></property>
+	
+	
 	</bean>
-	<bean id="zeroPoint" class="com.spring.org.Point">
+	<bean id="triangle1" class="com.spring.org.Triangle" parent="triangle" >
+	<property name="pointB" ref="pointB"></property>
+	<property name="pointC" ref="pointC"></property>
+	
+	
+	</bean>
+	<bean id="triangle2" class="com.spring.org.Triangle" parent="triangle">
+	<property name="pointB" ref="pointB"></property>
+	
+	
+	</bean>
+	<bean id="pointB" class="com.spring.org.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="pointC" class="com.spring.org.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+	<bean id="pointA" class="com.spring.org.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>

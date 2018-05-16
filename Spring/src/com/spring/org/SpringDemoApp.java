@@ -17,7 +17,9 @@ public class SpringDemoApp {
 		// Using AppliationContext
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring_classPath.xml");
-		Triangle triangle2 = (Triangle) context.getBean("triangle");
+		Triangle triangle = (Triangle) context.getBean("triangle1");
+		triangle.draw();
+		Triangle triangle2 = (Triangle) context.getBean("triangle2");
 		triangle2.draw();
 	}
 

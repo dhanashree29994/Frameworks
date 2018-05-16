@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-	<bean id="triangle" class="com.spring.org.Triangle" autowire="byName">
+	<bean id="triangle" class="com.spring.org.Triangle" >
+	<property name="pointA" ref="pointA"></property>
+	
+	
+	</bean>
+	<bean id="triangle1" class="com.spring.org.Triangle" parent="triangle" >
+	<property name="pointB" ref="pointB"></property>
+	<property name="pointC" ref="pointC"></property>
+	
+	
+	</bean>
+	<bean id="triangle2" class="com.spring.org.Triangle" parent="triangle">
+	<property name="pointB" ref="pointB"></property>
+	
+	
 	</bean>
 	<bean id="pointB" class="com.spring.org.Point">
 		<property name="x" value="-20" />

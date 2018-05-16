@@ -5,9 +5,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 
-public class Triangle
+public class Triangle implements ApplicationContextAware, BeanNameAware
 {
 	/*private String type;
 	private int height;
@@ -94,6 +98,7 @@ public class Triangle
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	public ApplicationContext context=null;
 	public Point getPointA() {
 		return pointA;
 	}
@@ -111,6 +116,7 @@ public class Triangle
 	}
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
+		
 	}
 	public void draw()
 	{
@@ -121,6 +127,16 @@ public class Triangle
 		
 		
 		
+		
+	}
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context=context;
+	}
+	@Override
+	public void setBeanName(String beanName) {
+		// TODO Auto-generated method stub
+		System.out.println("Current bean name is : "+beanName);
 		
 	}
 }
