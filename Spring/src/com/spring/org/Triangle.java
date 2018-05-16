@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean
+public class Triangle  
 {
 	/*private String type;
 	private int height;
@@ -125,28 +125,11 @@ public class Triangle implements ApplicationContextAware, BeanNameAware, Initial
 		System.out.println(pointA.getX()+"   "+pointA.getY());
 		System.out.println(pointB.getX()+"   "+pointB.getY());
 		System.out.println(pointC.getX()+"   "+pointC.getY());
-			
-		
-		
-		
-		
 	}
-	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
-		this.context=context;
-	}
-	@Override
-	public void setBeanName(String beanName) {
-		// TODO Auto-generated method stub
-		System.out.println("Current bean name is : "+beanName);
+	public void myInit()
+	{
 		
+		System.out.println("In my initialization method");
 	}
-	@Override
-	public void destroy() throws Exception {
-		System.out.println("In destroy()");
-	}
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("In init ()");
-	}
+	
 }
