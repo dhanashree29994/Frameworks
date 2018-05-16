@@ -7,11 +7,13 @@ import java.util.Map;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.env.SystemEnvironmentPropertySource;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware
+public class Triangle implements ApplicationContextAware, BeanNameAware, InitializingBean, DisposableBean
 {
 	/*private String type;
 	private int height;
@@ -138,5 +140,13 @@ public class Triangle implements ApplicationContextAware, BeanNameAware
 		// TODO Auto-generated method stub
 		System.out.println("Current bean name is : "+beanName);
 		
+	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("In destroy()");
+	}
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("In init ()");
 	}
 }

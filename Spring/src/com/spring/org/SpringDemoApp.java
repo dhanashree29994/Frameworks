@@ -3,6 +3,7 @@ package com.spring.org;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.FileSystemResource;
 
@@ -16,11 +17,11 @@ public class SpringDemoApp {
 		 */
 		// Using AppliationContext
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring_classPath.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle1");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring_classPath.xml");
+		context.registerShutdownHook();
+		Triangle triangle = (Triangle) context.getBean("triangle");
 		triangle.draw();
-		Triangle triangle2 = (Triangle) context.getBean("triangle2");
-		triangle2.draw();
+		
 	}
 
 }
